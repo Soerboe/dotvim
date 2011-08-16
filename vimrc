@@ -8,6 +8,7 @@
 "   - c.vim
 "   - git-vim
 "   - Sessionman
+"   - tabular
 "
 " Shortcuts:
 " <leader> is ','
