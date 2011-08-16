@@ -1,8 +1,8 @@
 README (dotvim.git)
 
 Installation:
-j    
-    gitt clone http://github.com/soerboe/dotvim.git ~/.vim
+    
+    git clone http://github.com/Soerboe/dotvim.git ~/.vim
 
 Config:
 
