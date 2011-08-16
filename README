@@ -1,0 +1,16 @@
+README (dotvim.git)
+
+Installation:
+    
+    git clone http://github.com/soerboe/dotvim.git ~/.vim
+
+Config:
+
+    rm ~/.vimrc 
+    ln -s ~/.vim/vimrc ~/.vimrc 
+
+Updates:
+
+    cd ~/.vim 
+    git pull
+
