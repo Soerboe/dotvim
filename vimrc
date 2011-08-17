@@ -48,7 +48,7 @@ set incsearch                       " do incremental searching
 set laststatus=2                    " use status bar
 set lazyredraw                      " lazy screen redraw (faster)
 set linespace=0                     " don't insert any extra space betweens rows
-set listchars=tab:→\ ,trail:-       " show tabs and trailing spaces
+set listchars=tab:>\ ,trail:-       " show tabs and trailing spaces
 set mouse=a                         " enable mouse
 set nocopyindent                    " follow previous indent level
 set noerrorbells                    " no noise, please
