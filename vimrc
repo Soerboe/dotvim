@@ -90,7 +90,7 @@ nnoremap <F12> :noh<return><esc>
 nmap <leader>trail :call RunCmdAndPreserveState("%s/\\s\\+$//e")<CR>
 
 nmap <silent> gb <C-^>
-nmap <silent> gt <C-]> 
+map <silent> gt <C-]> 
 command! -nargs=* Vrc e ~/.vimrc     " shortcut to open .vimrc
 
 " Convenient command to see the difference between the current buffer and the
