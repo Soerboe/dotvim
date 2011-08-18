@@ -24,7 +24,7 @@ hi Folded       guifg=DarkOliveGreen2   guibg=grey30
 hi FoldColumn   guifg=DarkOliveGreen2   guibg=grey30
 hi IncSearch    guifg=bisque            guibg=red
 hi LineNr       guifg=OliveDrab4        guibg=grey15
-hi MatchParen   guifg=snow              guibg=yellowgreen
+hi MatchParen   guifg=black             guibg=yellowgreen
 hi ModeMsg      guifg=khaki3            guibg=grey15
 hi MoreMsg      guifg=khaki3            guibg=grey15
 hi NonText      guifg=DarkSalmon        guibg=grey10

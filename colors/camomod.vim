@@ -33,7 +33,7 @@ hi PmenuSbar    guibg=bisque4           guifg=fg
 hi PmenuSel     guibg=OliveDrab3        guifg=Black
 hi PmenuThumb   guibg=Grey75            guifg=fg
 hi Question     guifg=IndianRed         guibg=grey10
-hi Search       guifg=red               guibg=grey15
+hi Search       guifg=red               guibg=bisque
 hi SpecialKey   guifg=yellow            guibg=grey15
 hi StatusLine   guifg=bisque4           guibg=white
 hi StatusLineNC guifg=bisque4           guibg=white
