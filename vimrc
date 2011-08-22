@@ -19,7 +19,8 @@
 "   - ',trail' = delete trailing white spaces in file
 "   - 'gb'     = go back to previous open buffer
 "   - 'gt'     = go to tag under cursor
-"   - 'glt'    = Get a list of matching tags
+"   - 'glt'    = get a list of matching tags
+"   - 'gn/gp'  = go to next/previous matching tag
 "   - ':Vrc'   = open .vimrc
 "
 "   (see bottom for filetype specific shortcuts)
@@ -91,7 +92,7 @@ nnoremap <F12> :noh<return><esc>
 " Remove trailing whitespaces
 nmap <leader>trail :call RunCmdAndPreserveState("%s/\\s\\+$//e")<CR>
 
-" Go bach to previous open buffer
+" Go back to previous open buffer
 nmap <silent> gb <C-^>
 
 " Go to tag under cursor
@@ -99,6 +100,10 @@ map <silent> gt <C-]>
 
 " Get a list of matching tags
 map <silent> glt g<C-]>
+
+" Go to next/prev matching tag
+map <silent> gn :tnext<cr>
+map <silent> gp :tprev<cr>
 
 command! -nargs=* Vrc e ~/.vimrc     " shortcut to open .vimrc
 
