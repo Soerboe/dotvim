@@ -131,7 +131,7 @@ augroup vimrc_filetype
     \   exe "normal! g`\"" |
     \ endif
 
-    " Replace doc<CR> with a javadoc header
+    " Replace common statements in java
     autocmd FileType java    abbr doc /** <CR>@param <CR>@param <CR>@return <CR>/<ESC>4kA
     autocmd FileType java    abbr psvm public static void main(String[] args) {
     autocmd FileType java    abbr sop System.out.print(
