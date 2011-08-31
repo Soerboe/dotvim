@@ -133,9 +133,10 @@ augroup vimrc_filetype
 
     " Replace doc<CR> with a javadoc header
     autocmd FileType java    abbr doc /** <CR>@param <CR>@param <CR>@return <CR>/<ESC>4kA
-    autocmd FileType java    abbr psvm public static void main(String[] args) {
-    autocmd FileType java    abbr sop System.out.print(
-    autocmd FileType java    abbr sopl System.out.println(
+    autocmd FileType java    abbr sop System.out.println("");<esc>2hi
+    autocmd FileType java    abbr sopl System.out.println("");<esc>2hi
+    autocmd FileType java    abbr psvm public static void main(String[] args){<CR>}<esc>O
+
 
     " Automatically source
     autocmd BufWritePost   ~/.vimrc  :source %
