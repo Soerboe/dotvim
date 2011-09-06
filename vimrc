@@ -43,7 +43,7 @@ set nocursorline                    " don't show highlighted cursor line
 set expandtab                       " convert tabs to spaces
 set formatoptions+=ro               " keep indenting block comments
 set hidden                          " change buffer without saving
-set history=500                     " keep 100 lines of command line history
+set history=500                     " keep 500 lines of command line history
 set hlsearch                        " highlighted search
 set ignorecase                      " case insensitive
 set incsearch                       " do incremental searching

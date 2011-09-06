@@ -11,7 +11,8 @@ endif
 let g:colors_name="camomod"
 
 hi Normal       guifg=white             guibg=grey15
-hi Cursor       guifg=black             guibg=bisque3
+hi Cursor       guifg=black             guibg=snow
+hi iCursor      guifg=white             guibg=black
 hi CursorIM     guifg=OliveDrab4        guibg=bisque
 hi Directory    guifg=OliveDrab4        guibg=grey15
 hi DiffAdd      guifg=DarkOliveGreen1   guibg=grey15

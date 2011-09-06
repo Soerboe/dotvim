@@ -77,7 +77,7 @@ if s:sienna_style == 'dark'
     hi PreProc gui=none guifg=SkyBlue3
     hi Todo gui=bold guifg=Black guibg=Yellow2
     hi Type gui=bold guifg=SkyBlue2
-    hi Underlined gui=underline guifg=DodgerBlue
+    hi Underlined gui=underline guifg=red
 
     hi Boolean gui=bold guifg=PaleGreen2
     hi Constant gui=none guifg=PaleGreen2
