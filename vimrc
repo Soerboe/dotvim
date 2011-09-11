@@ -33,15 +33,15 @@ so ~/.vim/plugin/autotag.vim
 
 " Misc. config options
 set autochdir                       " cd to dir of current file
-set autoindent                      " automatically indent
+" set autoindent                      " automatically indent
 set autoread                        " automatically re-read when file is changed
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
 set backup                          " keep a backup file
-set cindent                         " use C style indenting
+" set cindent                         " use C style indenting
 set confirm                         " ask to save file when issuing a command
 set nocursorline                    " don't show highlighted cursor line
 set expandtab                       " convert tabs to spaces
-set formatoptions+=ro               " keep indenting block comments
+" set formatoptions+=ro               " keep indenting block comments
 set hidden                          " change buffer without saving
 set history=500                     " keep 500 lines of command line history
 set hlsearch                        " highlighted search
@@ -52,19 +52,19 @@ set lazyredraw                      " lazy screen redraw (faster)
 set linespace=0                     " don't insert any extra space betweens rows
 set listchars=tab:>\ ,trail:-       " show tabs and trailing spaces
 set mouse=a                         " enable mouse
-set nocopyindent                    " follow previous indent level
+" set nocopyindent                    " follow previous indent level
 set noerrorbells                    " no noise, please
 set novisualbell                    " blink on error
 set nowrap                          " no line wrapping
 set number                          " show line numbers
 set ruler                           " show the cursor position all the time
-set shiftround                      " be clever with tabs
+set shiftround                      " round indent to shiftwidth
 set shiftwidth=4                    " used with autoindenting
 set showcmd                         " show current command
 set showmatch                       " show matching parenthesis
 set showmode                        " show current mode (insert etc.)
-set smartindent                     " indenting
-set smarttab                        " indenting
+" set smartindent                     " indenting
+" set smarttab                        " indenting
 set softtabstop=4                   " insert four spaces for tab
 set statusline=%<%f\ (%L\ lines)\ %{GitBranch()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P       " custom statusline
 set tags=./tags;/                   " load a tags file located somewhere in the path
@@ -92,7 +92,7 @@ nnoremap <F12> :noh<return><esc>
 " Remove trailing whitespaces
 nmap <leader>trail :call RunCmdAndPreserveState("%s/\\s\\+$//e")<CR>
 
-" Go back to previous open buffer
+" Go back to previous buffer
 nmap <silent> gb <C-^>
 
 " Go to tag under cursor
@@ -120,7 +120,7 @@ endif
 " Most importantly: Comment in and out lines using - and _ respectively.
 " The different FileTypes can be found in /usr/share/vim/vim70/filetype.vim
 
-filetype plugin indent on           " Enable file type detection.
+filetype plugin indent on           " Enable file type detection and indentation
 augroup vimrc_filetype
     autocmd!
     autocmd FileType make    setlocal softtabstop=0 noexpandtab shiftwidth=8 " Makefiles need real tabs
