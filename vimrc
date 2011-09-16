@@ -14,6 +14,7 @@
 " <leader> is ','
 "   - F12      = clear search highlighting
 "   - ',l'     = show invisible characters
+"   - ',bd'    = ':bd' without closing window (using plugin bclose.vim)
 "   - '-'      = comment out region
 "   - '_'      = uncomment region
 "   - ',trail' = delete trailing white spaces in file
