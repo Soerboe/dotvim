@@ -81,6 +81,7 @@ let g:netrw_liststyle=3             " Use tree-mode as default view in file brow
 " GUI options
 if has("gui_running")
         set guifont=Monospace\ 10   " set GUI font
+        set guioptions+=b           " turn on horizontal scrollbar
         colorscheme camomod
 endif
 
