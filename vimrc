@@ -7,22 +7,24 @@
 "   - autotag
 "   - c.vim
 "   - git-vim
+"   - javacomplete
 "   - Sessionman
 "   - tabular
 "
 " Shortcuts:
 " <leader> is ','
-"   - F12      = clear search highlighting
-"   - ',l'     = show invisible characters
-"   - ',bd'    = ':bd' without closing window (using plugin bclose.vim)
-"   - '-'      = comment out region
-"   - '_'      = uncomment region
-"   - ',trail' = delete trailing white spaces in file
-"   - 'gb'     = go back to previous open buffer
-"   - 'gt'     = go to tag under cursor
-"   - 'glt'    = get a list of matching tags
-"   - 'gn/gp'  = go to next/previous matching tag
-"   - ':Vrc'   = open .vimrc
+"   - F12               = clear search highlighting
+"   - ',l'              = show invisible characters
+"   - ',bd'             = ':bd' without closing window (using plugin bclose.vim)
+"   - '-'               = comment out region
+"   - '_'               = uncomment region
+"   - ',trail'          = delete trailing white spaces in file
+"   - 'gb'              = go back to previous open buffer
+"   - 'gt'              = go to tag under cursor
+"   - 'glt'             = get a list of matching tags
+"   - 'gn/gp'           = go to next/previous matching tag
+"   - ':Vrc'            = open .vimrc
+"   - <C-x><C-o>        = get java code completetion (javacomplete)
 "
 "   (see bottom for filetype specific shortcuts)
 
@@ -117,7 +119,6 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-
 " Filetype-specific autocommands.
 " Most importantly: Comment in and out lines using - and _ respectively.
 " The different FileTypes can be found in /usr/share/vim/vim70/filetype.vim
@@ -139,6 +140,8 @@ augroup vimrc_filetype
     autocmd FileType java    abbr sopl System.out.println("");<esc>2hi
     autocmd FileType java    abbr psvm public static void main(String[] args) {<CR>}<esc>O
 
+    autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+    autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo 
 
     " Automatically source
     autocmd BufWritePost   ~/.vimrc  :source %
