@@ -138,6 +138,7 @@ augroup vimrc_filetype
     autocmd FileType java    abbr doc /** <CR>@param <CR>@param <CR>@return <CR>/<ESC>4kA
     autocmd FileType java    abbr sop System.out.println("");<esc>2hi
     autocmd FileType java    abbr sopl System.out.println("");<esc>2hi
+    autocmd FileType java    abbr sopf System.out.printf("");<esc>2hi
     autocmd FileType java    abbr psvm public static void main(String[] args) {<CR>}<esc>O
 
     autocmd Filetype java setlocal omnifunc=javacomplete#Complete
