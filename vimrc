@@ -13,16 +13,17 @@
 "
 " Shortcuts:
 " <leader> is ','
-"   - F12               = clear search highlighting
 "   - ',l'              = show invisible characters
 "   - ',bd'             = ':bd' without closing window (using plugin bclose.vim)
+"   - ',trail'          = delete trailing white spaces in file
 "   - '-'               = comment out region
 "   - '_'               = uncomment region
-"   - ',trail'          = delete trailing white spaces in file
 "   - 'gb'              = go back to previous open buffer
 "   - 'gt'              = go to tag under cursor
 "   - 'glt'             = get a list of matching tags
 "   - 'gn/gp'           = go to next/previous matching tag
+"   - 'tt'              = toggle taglist window
+"   - F12               = clear search highlighting
 "   - ':Vrc'            = open .vimrc
 "   - <C-x><C-o>        = get java code completetion (javacomplete)
 "
@@ -109,6 +110,8 @@ map <silent> glt g<C-]>
 map <silent> gn :tnext<cr>
 map <silent> gp :tprev<cr>
 
+map tt :TlistToggle<cr>
+
 command! -nargs=* Vrc e ~/.vimrc     " shortcut to open .vimrc
 
 " Convenient command to see the difference between the current buffer and the
@@ -136,7 +139,7 @@ augroup vimrc_filetype
 
     " Replace common statements in java
     autocmd FileType java    abbr doc /** <CR>@param <CR>@param <CR>@return <CR>/<ESC>4kA
-    autocmd FileType java    abbr sop System.out.println("");<esc>2hi
+    autocmd FileType java    abbr sop System.out.print("");<esc>2hi
     autocmd FileType java    abbr sopl System.out.println("");<esc>2hi
     autocmd FileType java    abbr sopf System.out.printf("");<esc>2hi
     autocmd FileType java    abbr psvm public static void main(String[] args) {<CR>}<esc>O
