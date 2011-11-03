@@ -138,6 +138,9 @@ augroup vimrc_filetype
     autocmd FileType java    abbr sopl System.out.println("");<esc>2hi
     autocmd FileType java    abbr psvm public static void main(String[] args) {<CR>}<esc>O
 
+    " Turn on folding for selected filetypes
+    autocmd Syntax c,cpp,vim,xml,html,java,css,php,python,tex setlocal foldmethod=indent
+    autocmd Syntax c,cpp,vim,xml,html,java,css,php,python,tex normal zR
 
     " Automatically source
     autocmd BufWritePost   ~/.vimrc  :source %
