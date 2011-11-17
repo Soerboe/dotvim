@@ -22,6 +22,8 @@
 "   - 'gt'              = go to tag under cursor
 "   - 'glt'             = get a list of matching tags
 "   - 'gn/gp'           = go to next/previous matching tag
+"   - 'ca'              = copy all to clipboard
+"   - 'sa'              = select all
 "   - 'tt'              = toggle taglist window
 "   - F12               = clear search highlighting
 "   - ':Vrc'            = open .vimrc
@@ -109,6 +111,11 @@ map <silent> glt g<C-]>
 " Go to next/prev matching tag
 map <silent> gn :tnext<cr>
 map <silent> gp :tprev<cr>
+
+" Select the whole file
+nmap <leader>sa gg<S-v>G
+" Copy the whole file to clipboard
+nmap <leader>ca gg<S-v>G"+y
 
 map tt :TlistToggle<cr>
 
