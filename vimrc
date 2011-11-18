@@ -47,7 +47,7 @@ set backup                          " keep a backup file
 set confirm                         " ask to save file when issuing a command
 set nocursorline                    " don't show highlighted cursor line
 set expandtab                       " convert tabs to spaces
-" set formatoptions+=ro               " keep indenting block comments
+set formatoptions=tw                " keep indenting block comments
 set hidden                          " change buffer without saving
 set history=500                     " keep 500 lines of command line history
 set hlsearch                        " highlighted search
@@ -61,7 +61,7 @@ set mouse=a                         " enable mouse
 " set nocopyindent                    " follow previous indent level
 set noerrorbells                    " no noise, please
 set novisualbell                    " blink on error
-set nowrap                          " no line wrapping
+set wrap                            " line wrapping
 set number                          " show line numbers
 set ruler                           " show the cursor position all the time
 set shiftround                      " round indent to shiftwidth
@@ -74,6 +74,7 @@ set showmode                        " show current mode (insert etc.)
 set softtabstop=4                   " insert four spaces for tab
 set statusline=%<%f\ (%L\ lines)\ %{GitBranch()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P       " custom statusline
 set tags=./tags;/                   " load a tags file located somewhere in the path
+set textwidth=80
 set wildignore=*.o,*.obj,*.bak,*.jpg,*.gif,*.png,*.gch,*.class,*~ " ignore file extensions with tab
 set wildmode=longest,list,full      " sets tab completition to something resonable
 set wildmenu                        " turns on tab completition menu
@@ -130,7 +131,6 @@ if !exists(":DiffOrig")
 endif
 
 " Filetype-specific autocommands.
-" Most importantly: Comment in and out lines using - and _ respectively.
 " The different FileTypes can be found in /usr/share/vim/vim70/filetype.vim
 
 filetype plugin indent on           " Enable file type detection and indentation
@@ -156,6 +156,9 @@ augroup vimrc_filetype
     " Turn on folding for selected filetypes
     autocmd Syntax c,cpp,vim,xml,html,java,css,php,python,tex setlocal foldmethod=indent
     autocmd Syntax c,cpp,vim,xml,html,java,css,php,python,tex normal zR
+
+    " Set formating options for programming
+    autocmd Syntax c,cpp,xml,html,java,css,php,python setlocal nowrap textwidth=0 formatoptions=
 
     " Automatically source
     autocmd BufWritePost   ~/.vimrc  :source %
