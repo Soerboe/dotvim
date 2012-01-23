@@ -154,8 +154,8 @@ augroup vimrc_filetype
     autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo 
 
     " Turn on folding for selected filetypes
-    autocmd Syntax c,cpp,vim,xml,html,java,css,php,python,tex setlocal foldmethod=indent
-    autocmd Syntax c,cpp,vim,xml,html,java,css,php,python,tex normal zR
+"     autocmd Syntax c,cpp,vim,xml,html,java,css,php,python,tex setlocal foldmethod=indent
+"     autocmd Syntax c,cpp,vim,xml,html,java,css,php,python,tex normal zR
 
     " Set formating options for programming
     autocmd Syntax c,cpp,xml,html,java,css,php,python setlocal nowrap textwidth=0 formatoptions=
@@ -166,7 +166,7 @@ augroup vimrc_filetype
 
     " Commenting blocks of code with "-" and uncomment with "_".
     autocmd FileType *                let b:comment_leader = '# '
-    autocmd FileType c,cpp,java       let b:comment_leader = '// '
+    autocmd FileType c,cpp,java,javascript       let b:comment_leader = '// '
 "     autocmd FileType sh,python,make   let b:comment_leader = '# '
 "     autocmd FileType conf,fstab       let b:comment_leader = '# '
     autocmd FileType tex              let b:comment_leader = '% '
