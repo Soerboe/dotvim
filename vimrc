@@ -13,6 +13,7 @@
 "
 " Shortcuts:
 " <leader> is ','
+"   - ',f'              = format a paragraph
 "   - ',l'              = show invisible characters
 "   - ',bd'             = ':bd' without closing window (using plugin bclose.vim)
 "   - ',trail'          = delete trailing white spaces in file
@@ -117,6 +118,9 @@ map <silent> gp :tprev<cr>
 nmap <leader>sa gg<S-v>G
 " Copy the whole file to clipboard
 nmap <leader>ca gg<S-v>G"+y
+
+" Reformat a paragraph
+nmap <leader>f gwip
 
 map tt :TlistToggle<cr>
 
