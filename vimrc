@@ -154,12 +154,15 @@ augroup vimrc_filetype
     autocmd FileType java    abbr sopl System.out.println("");<esc>2hi
     autocmd FileType java    abbr sopf System.out.printf("");<esc>2hi
     autocmd FileType java    abbr psvm public static void main(String[] args) {<CR>}<esc>O
-    autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-    autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo 
+"     autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+"     autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo 
 
     " Turn on folding for selected filetypes
 "     autocmd Syntax c,cpp,vim,xml,html,java,css,php,python,tex setlocal foldmethod=indent
 "     autocmd Syntax c,cpp,vim,xml,html,java,css,php,python,tex normal zR
+    
+    " Turn on spell checking for text files
+    autocmd Syntax tex,txt setlocal spell
 
     " Set formating options for programming
     autocmd Syntax c,cpp,xml,html,java,css,php,python setlocal nowrap textwidth=0 formatoptions=
