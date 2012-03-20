@@ -167,6 +167,9 @@ augroup vimrc_filetype
     " Set formating options for programming
     autocmd Syntax c,cpp,xml,html,java,css,php,python setlocal nowrap textwidth=0 formatoptions=
 
+    " Set 2 spaces for C++ files
+    autocmd Syntax cpp setlocal shiftwidth=2 softtabstop=2
+
     " Automatically source
     autocmd BufWritePost   ~/.vimrc  :source %
     autocmd BufWritePost   ~/.bashrc :!source %
