@@ -53,6 +53,7 @@ set hidden                          " change buffer without saving
 set history=500                     " keep 500 lines of command line history
 set hlsearch                        " highlighted search
 set ignorecase                      " case insensitive
+set infercase                       " autocomplete case insensitiveness
 set incsearch                       " do incremental searching
 set laststatus=2                    " use status bar
 set lazyredraw                      " lazy screen redraw (faster)
@@ -87,7 +88,7 @@ let g:netrw_liststyle=3             " Use tree-mode as default view in file brow
 
 " GUI options
 if has("gui_running")
-        set guifont=Monospace\ 8   " set GUI font
+        set guifont=Monospace\ 9   " set GUI font
         set guioptions+=b           " turn on horizontal scrollbar
         colorscheme camomod
 endif
