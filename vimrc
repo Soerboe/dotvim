@@ -90,7 +90,7 @@ let g:netrw_liststyle=3             " Use tree-mode as default view in file brow
 if has("gui_running")
         set guifont=Monospace\ 9   " set GUI font
         set guioptions+=b           " turn on horizontal scrollbar
-        colorscheme camomod
+        colorscheme sienna
 endif
 
 " Toogle 'set list' to show invisible characters
