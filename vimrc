@@ -3,47 +3,46 @@
 " Author: Soerboe <>
 "
 " Plugins:
-"   - AutoComplPop
-"   - autotag
-"   - c.vim
-"   - git-vim
-"   - javacomplete
-"   - Sessionman
-"   - tabular
-"
+"   AutoComplPop
+"   autotag
+"   c.vim
+"   l9
+"   pathogen
+"   Sessionman
+"   tabular
+"   taglist
+
+" Let Pathogen handle plugins
+call pathogen#infect() 
+
 " Shortcuts:
-" <leader> is ','
-"   - ',f'              = format a paragraph
-"   - ',l'              = show invisible characters
-"   - ',bd'             = ':bd' without closing window (using plugin bclose.vim)
-"   - ',trail'          = delete trailing white spaces in file
+"   - '\f'              = format a paragraph
+"   - '\l'              = show invisible characters
+"   - '\bd'             = ':bd' without closing window (using plugin bclose.vim)
+"   - '\trail'          = delete trailing white spaces in file
 "   - '-'               = comment out region
 "   - '_'               = uncomment region
 "   - 'gb'              = go back to previous open buffer
 "   - 'gt'              = go to tag under cursor
 "   - 'glt'             = get a list of matching tags
 "   - 'gn/gp'           = go to next/previous matching tag
-"   - 'ca'              = copy all to clipboard
-"   - 'sa'              = select all
+"   - '\ca'              = copy all to clipboard
+"   - '\sa'              = select all
 "   - 'tt'              = toggle taglist window
 "   - F12               = clear search highlighting
 "   - ':Vrc'            = open .vimrc
-"   - <C-x><C-o>        = get java code completetion (javacomplete)
 "
 "   (see bottom for filetype specific shortcuts)
 
 " Use Vim settings
 set nocompatible
 
-" Load the autotag plugin
-so ~/.vim/plugin/autotag.vim
-
 " Misc. config options
 set autochdir                       " cd to dir of current file
 " set autoindent                      " automatically indent
 set autoread                        " automatically re-read when file is changed
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
-set backup                          " keep a backup file
+" set backup                          " keep a backup file
 " set cindent                         " use C style indenting
 set confirm                         " ask to save file when issuing a command
 set nocursorline                    " don't show highlighted cursor line
@@ -83,15 +82,21 @@ set wildmenu                        " turns on tab completition menu
 syntax on                           " turn on syntax hightlighting
 
 " Varibles
-let mapleader = ","                 " set <Leader> character ('\' is default)
+" let mapleader = ","                 " set <Leader> character ('\' is default)
 let g:netrw_liststyle=3             " Use tree-mode as default view in file browser
 
 " GUI options
 if has("gui_running")
         set guifont=Monospace\ 9   " set GUI font
         set guioptions+=b           " turn on horizontal scrollbar
-        colorscheme sienna
+        colorscheme camomod
 endif
+
+" Turn off arrow keys to break bad habbit
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 " Toogle 'set list' to show invisible characters
 nmap <leader>l :set list!<CR>
@@ -155,8 +160,6 @@ augroup vimrc_filetype
     autocmd FileType java    abbr sopl System.out.println("");<esc>2hi
     autocmd FileType java    abbr sopf System.out.printf("");<esc>2hi
     autocmd FileType java    abbr psvm public static void main(String[] args) {<CR>}<esc>O
-"     autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-"     autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo 
 
     " Turn on folding for selected filetypes
 "     autocmd Syntax c,cpp,vim,xml,html,java,css,php,python,tex setlocal foldmethod=indent
