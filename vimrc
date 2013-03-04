@@ -10,7 +10,7 @@
 "   pathogen
 "   Sessionman
 "   tabular
-"   taglist
+"   Tagbar
 
 " Let Pathogen handle plugins
 call pathogen#infect() 
@@ -62,6 +62,7 @@ set mouse=a                         " enable mouse
 " set nocopyindent                    " follow previous indent level
 set noerrorbells                    " no noise, please
 set novisualbell                    " blink on error
+set nrformats-=octal                " handle number with leading zeros as decimal
 set wrap                            " line wrapping
 set number                          " show line numbers
 set ruler                           " show the cursor position all the time
@@ -98,6 +99,9 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" Make Y consistent with C and D. See :help Y.
+nnoremap Y y$
+
 " Toogle 'set list' to show invisible characters
 nmap <leader>l :set list!<CR>
 
@@ -128,7 +132,7 @@ nmap <leader>ca gg<S-v>G"+y
 " Reformat a paragraph
 nmap <leader>f gwip
 
-map tt :TlistToggle<cr>
+nmap <leader>tt :TagbarToggle<cr>
 
 command! -nargs=* Vrc e ~/.vimrc     " shortcut to open .vimrc
 
