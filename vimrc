@@ -16,21 +16,23 @@
 call pathogen#infect() 
 
 " Shortcuts:
-"   - '\f'              = format a paragraph
-"   - '\l'              = show invisible characters
-"   - '\bd'             = ':bd' without closing window (using plugin bclose.vim)
-"   - '\trail'          = delete trailing white spaces in file
-"   - '-'               = comment out region
-"   - '_'               = uncomment region
-"   - 'gb'              = go back to previous open buffer
-"   - 'gt'              = go to tag under cursor
-"   - 'glt'             = get a list of matching tags
-"   - 'gn/gp'           = go to next/previous matching tag
-"   - '\ca'              = copy all to clipboard
-"   - '\sa'              = select all
-"   - 'tt'              = toggle taglist window
-"   - F12               = clear search highlighting
-"   - ':Vrc'            = open .vimrc
+"   \f              = format a paragraph
+"   \l              = show invisible characters
+"   \bd             = ':bd' without closing window (using plugin bclose.vim)
+"   \trail          = delete trailing white spaces in file
+"   -               = comment out region
+"   _               = uncomment region
+"   gb              = go back to previous open buffer
+"   gt              = go to tag under cursor
+"   glt             = get a list of matching tags
+"   gn/gp           = go to next/previous matching tag
+"   \ca             = copy all to clipboard
+"   \sa             = select all
+"   tt              = toggle taglist window
+"   F12             = clear search highlighting
+"   Enter           = Insert newline after cursor in normal mode
+"   Shift-Enter     = Insert newline before cursor in normal mode
+"   :Vrc            = open .vimrc
 "
 "   (see bottom for filetype specific shortcuts)
 
@@ -115,14 +117,14 @@ nmap <leader>trail :call RunCmdAndPreserveState("%s/\\s\\+$//e")<CR>
 nmap <silent> gb <C-^>
 
 " Go to tag under cursor
-map <silent> gt <C-]> 
+nmap <silent> gt <C-]> 
 
 " Get a list of matching tags
-map <silent> glt g<C-]>
+nmap <silent> glt g<C-]>
 
 " Go to next/prev matching tag
-map <silent> gn :tnext<cr>
-map <silent> gp :tprev<cr>
+nmap <silent> gn :tnext<cr>
+nmap <silent> gp :tprev<cr>
 
 " Select the whole file
 nmap <leader>sa gg<S-v>G
@@ -133,6 +135,9 @@ nmap <leader>ca gg<S-v>G"+y
 nmap <leader>f gwip
 
 nmap <leader>tt :TagbarToggle<cr>
+
+nnoremap <CR> o<Esc>
+nnoremap <S-CR> O<Esc>
 
 command! -nargs=* Vrc e ~/.vimrc     " shortcut to open .vimrc
 
