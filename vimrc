@@ -17,6 +17,7 @@ call pathogen#infect()
 
 " Shortcuts:
 "   \f              = format a paragraph
+"   \h              = toogle highlight search
 "   \l              = show invisible characters
 "   \bd             = ':bd' without closing window (using plugin bclose.vim)
 "   \trail          = delete trailing white spaces in file
@@ -29,7 +30,6 @@ call pathogen#infect()
 "   \ca             = copy all to clipboard
 "   \sa             = select all
 "   tt              = toggle taglist window
-"   F12             = clear search highlighting
 "   Enter           = Insert newline after cursor in normal mode
 "   Shift-Enter     = Insert newline before cursor in normal mode
 "   :Vrc            = open .vimrc
@@ -52,7 +52,7 @@ set expandtab                       " convert tabs to spaces
 set formatoptions=tw                " keep indenting block comments
 set hidden                          " change buffer without saving
 set history=500                     " keep 500 lines of command line history
-set hlsearch                        " highlighted search
+" set hlsearch                        " highlighted search
 set ignorecase                      " case insensitive
 set infercase                       " autocomplete case insensitiveness
 set incsearch                       " do incremental searching
@@ -104,11 +104,11 @@ noremap <Right> <NOP>
 " Make Y consistent with C and D. See :help Y.
 nnoremap Y y$
 
+" Toogle highlight search
+nmap <leader>h :set hlsearch!<CR>
+
 " Toogle 'set list' to show invisible characters
 nmap <leader>l :set list!<CR>
-
-" Clear highlighted search with F12
-nnoremap <F12> :noh<return><esc>
 
 " Remove trailing whitespaces
 nmap <leader>trail :call RunCmdAndPreserveState("%s/\\s\\+$//e")<CR>
