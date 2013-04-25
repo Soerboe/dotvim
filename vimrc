@@ -79,7 +79,7 @@ set softtabstop=4                   " insert four spaces for tab
 set statusline=%<%f\ (%L\ lines)\ %{GitBranch()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P       " custom statusline
 set tags=./tags;/                   " load a tags file located somewhere in the path
 set textwidth=80
-set wildignore=*.o,*.obj,*.bak,*.jpg,*.gif,*.png,*.gch,*.class,*~ " ignore file extensions with tab
+set wildignore=*.o,*.obj,*.bak,*.gch,*.class,*~ " ignore file extensions with tab
 set wildmode=longest,list,full      " sets tab completition to something resonable
 set wildmenu                        " turns on tab completition menu
 syntax on                           " turn on syntax hightlighting
