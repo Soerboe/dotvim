@@ -95,11 +95,15 @@ if has("gui_running")
         colorscheme camomod
 endif
 
-" Turn off arrow keys to break bad habbit
+" Turn off arrow keys to break bad habit
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
 
 " Make Y consistent with C and D. See :help Y.
 nnoremap Y y$
