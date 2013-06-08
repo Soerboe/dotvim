@@ -1,12 +1,12 @@
 Plugin name     Version / Date of last commit
 
-autocomplpop	2.14.1
-autotag		1.13
-cvim		6.0
-git-vim         Apr 17, 2012
-l9		1.1
-pathogen        2.2 
-sessionman	1.06
-tabular         Jan 27, 2013
-tagbar		2.4.1
-
+autocomplpop        2.14.1
+autotag             1.13
+cvim                6.0
+git-vim             Apr 17, 2012
+l9                  1.1
+pathogen            2.2 
+sessionman          1.06
+tabular             Jan 27, 2013
+tagbar              2.4.1
+vim-numbertoggle    Apr 09, 2013
