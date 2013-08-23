@@ -8,6 +8,7 @@ html5.vim           Aug 09, 2013
 l9                  1.1
 pathogen            2.2 
 sessionman          1.06
+syntastic           Aug 15, 2013
 tabular             Jan 27, 2013
 tagbar              2.4.1
 vim-numbertoggle    Apr 09, 2013

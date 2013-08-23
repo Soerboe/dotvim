@@ -9,6 +9,7 @@
 "   l9
 "   pathogen
 "   Sessionman
+"   syntastic
 "   tabular
 "   Tagbar
 
@@ -142,6 +143,19 @@ nmap <leader>tt :TagbarToggle<cr>
 
 nnoremap <CR> o<Esc>
 nnoremap <S-CR> O<Esc>
+
+" ---------------
+"
+" PLUGINS
+"
+" ---------------
+let g:syntastic_mode_map = { 'mode': 'active',
+	\ 'active_filetypes': [],
+	\ 'passive_filetypes': [] }
+let g:syntastic_javascript_checkers = ['jsl']
+let g:syntastic_error_symbol = 'X'
+let g:syntastic_warning_symbol = '!'
+
 
 command! -nargs=* Vrc e ~/.vimrc     " shortcut to open .vimrc
 
