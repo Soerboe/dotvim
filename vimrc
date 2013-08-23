@@ -89,9 +89,21 @@ syntax on                           " turn on syntax hightlighting
 " let mapleader = ","                 " set <Leader> character ('\' is default)
 let g:netrw_liststyle=3             " Use tree-mode as default view in file browser
 
+" check which OS vim is running on
+let osname=substitute(system('uname'), '\n', '', '')
+let OS='linux'
+if osname =~ 'Darwin' || osname =~ 'Mac'
+    let OS='mac'
+endif
+
 " GUI options
 if has("gui_running")
-        set guifont=Monospace\ 9   " set GUI font
+    " set GUI font
+    if (OS=~'mac')
+        set guifont=Menlo\ Regular:h11
+    elseif
+        set guifont=Monospace\ 9
+    endif
         set guioptions+=b           " turn on horizontal scrollbar
         colorscheme camomod
 endif
