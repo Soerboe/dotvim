@@ -101,7 +101,7 @@ if has("gui_running")
     " set GUI font
     if (OS=~'mac')
         set guifont=Menlo\ Regular:h11
-    elseif
+    else
         set guifont=Monospace\ 9
     endif
         set guioptions+=b           " turn on horizontal scrollbar
@@ -165,8 +165,8 @@ let g:syntastic_mode_map = { 'mode': 'active',
 	\ 'active_filetypes': [],
 	\ 'passive_filetypes': [] }
 let g:syntastic_javascript_checkers = ['jsl']
-let g:syntastic_error_symbol = 'X'
-let g:syntastic_warning_symbol = '!'
+let g:syntastic_error_symbol = 'E'
+let g:syntastic_warning_symbol = 'W'
 
 
 command! -nargs=* Vrc e ~/.vimrc     " shortcut to open .vimrc
