@@ -90,10 +90,14 @@ syntax on                           " turn on syntax hightlighting
 let g:netrw_liststyle=3             " Use tree-mode as default view in file browser
 
 " check which OS vim is running on
-let osname=substitute(system('uname'), '\n', '', '')
 let OS='linux'
-if osname =~ 'Darwin' || osname =~ 'Mac'
-    let OS='mac'
+if has("win32")
+    let OS='win'
+else
+    let osname=substitute(system('uname'), '\n', '', '')
+    if osname =~ 'Darwin' || osname =~ 'Mac'
+        let OS='mac'
+    endif
 endif
 
 " GUI options
@@ -101,11 +105,14 @@ if has("gui_running")
     " set GUI font
     if (OS=~'mac')
         set guifont=Menlo\ Regular:h11
+    elseif (OS=~'win')
+        set guifont=Courier\ New
     else
         set guifont=Monospace\ 9
     endif
-        set guioptions+=b           " turn on horizontal scrollbar
-        colorscheme camomod
+
+    set guioptions+=b           " turn on horizontal scrollbar
+    colorscheme camomod
 endif
 
 " Turn off arrow keys to break bad habit
@@ -168,8 +175,12 @@ let g:syntastic_javascript_checkers = ['jsl']
 let g:syntastic_error_symbol = 'E'
 let g:syntastic_warning_symbol = 'W'
 
-
-command! -nargs=* Vrc e ~/.vimrc     " shortcut to open .vimrc
+" shortcut to open .vimrc
+if (OS=~'win')
+    command! -nargs=* Vrc e ~/vimfiles/vimrc
+else
+    command! -nargs=* Vrc e ~/.vimrc
+endif
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -214,7 +225,11 @@ augroup vimrc_filetype
     autocmd Syntax cpp setlocal shiftwidth=2 softtabstop=2
 
     " Automatically source
-    autocmd BufWritePost   ~/.vimrc  :source %
+    if (OS=~'win')
+        autocmd BufWritePost   ~/vimfiles/vimrc  :source %
+    else
+        autocmd BufWritePost   ~/.vimrc  :source %
+    endif
     autocmd BufWritePost   ~/.bashrc :!source %
 
     " Commenting blocks of code with "-" and uncomment with "_".
