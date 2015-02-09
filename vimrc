@@ -77,6 +77,7 @@ set showmode                        " show current mode (insert etc.)
 " set smartindent                     " indenting
 " set smarttab                        " indenting
 set softtabstop=4                   " insert four spaces for tab
+set tabstop=4
 set statusline=%<%f\ (%L\ lines)\ %{GitBranch()}\ %h%m%r%=%-14.(%l,%c%V%)\ %P       " custom statusline
 set tags=./tags;/                   " load a tags file located somewhere in the path
 set textwidth=80
