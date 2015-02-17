@@ -50,7 +50,7 @@ set expandtab                       " convert tabs to spaces
 set formatoptions=tw                " keep indenting block comments
 set hidden                          " change buffer without saving
 set history=500                     " keep 500 lines of command line history
-" set hlsearch                        " highlighted search
+set hlsearch                        " highlighted search
 set ignorecase                      " case insensitive
 set infercase                       " autocomplete case insensitiveness
 set incsearch                       " do incremental searching
@@ -82,6 +82,10 @@ set wildignore=*.o,*.obj,*.bak,*.gch,*.class,*~ " ignore file extensions with ta
 set wildmode=longest,list,full      " sets tab completition to something resonable
 set wildmenu                        " turns on tab completition menu
 syntax on                           " turn on syntax hightlighting
+
+" Encodings
+set encoding=utf-8
+set fileencodings=utf-8
 
 " Varibles
 " let mapleader = ","                 " set <Leader> character ('\' is default)
