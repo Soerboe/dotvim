@@ -234,7 +234,6 @@ augroup vimrc_filetype
     noremap <silent> - :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
     noremap <silent> _ :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
-    au BufRead,BufNewFile *.css set ft=css syntax=css3
 augroup end
 
 function! RunCmdAndPreserveState(command)
