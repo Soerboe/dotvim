@@ -24,10 +24,7 @@ call pathogen#infect()
 "   \trail          = delete trailing white spaces in file
 "   -               = comment out region
 "   _               = uncomment region
-"   gb              = go back to previous open buffer
-"   gt              = go to tag under cursor
-"   glt             = get a list of matching tags
-"   gn/gp           = go to next/previous matching tag
+"   \gb              = go back to previous open buffer
 "   \ca             = copy all to clipboard
 "   \sa             = select all
 "   tt              = toggle taglist window
@@ -139,17 +136,7 @@ nmap <leader>l :set list!<CR>
 nmap <leader>trail :call RunCmdAndPreserveState("%s/\\s\\+$//e")<CR>
 
 " Go back to previous buffer
-nmap <silent> gb <C-^>
-
-" Go to tag under cursor
-nmap <silent> gt <C-]> 
-
-" Get a list of matching tags
-nmap <silent> glt g<C-]>
-
-" Go to next/prev matching tag
-nmap <silent> gn :tnext<cr>
-nmap <silent> gp :tprev<cr>
+nmap <leader>gb <C-^>
 
 " Select the whole file
 nmap <leader>sa gg<S-v>G
