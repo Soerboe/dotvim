@@ -224,15 +224,9 @@ augroup vimrc_filetype
     endif
     autocmd BufWritePost   ~/.bashrc :!source %
 
-    " Commenting blocks of code with "-" and uncomment with "_".
-    autocmd FileType *                let b:comment_leader = '# '
-    autocmd FileType c,cpp,java,javascript       let b:comment_leader = '// '
-"     autocmd FileType sh,python,make   let b:comment_leader = '# '
-"     autocmd FileType conf,fstab       let b:comment_leader = '# '
-    autocmd FileType tex              let b:comment_leader = '% '
-    autocmd FileType vim              let b:comment_leader = '" '
-    noremap <silent> - :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-    noremap <silent> _ :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+    " Comment with "-" and uncomment with "_" using nerdcommenter
+    map <silent> - <leader>cc
+    map <silent> _ <leader>cu
 
 augroup end
 
